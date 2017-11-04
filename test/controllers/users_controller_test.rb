@@ -20,6 +20,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should respons successfully" do
     get "/auth", headers: authenticated_header
-    assert_response :success
+    assert_response :unauthorized
   end
 end
