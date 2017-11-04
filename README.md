@@ -1,6 +1,8 @@
 # README
 [![Build Status](https://travis-ci.org/rusucosmin/guacamole.svg?branch=master)](https://travis-ci.org/rusucosmin/guacamole)
 
+Master branch that passes the build is automatically deployed to Heroku here `https://damp-refuge-96622.herokuapp.com`
+
 ## Backend
 
 - rails version: 5.1.4
