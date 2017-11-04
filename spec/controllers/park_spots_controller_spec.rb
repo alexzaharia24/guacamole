@@ -24,5 +24,6 @@ RSpec.describe "park spots", :type => :request do
     expect(resp_json[0]['price_per_hour']).to eq(1.5)
     expect(resp_json[0]['size']).to eq("medium")
     expect(resp_json[0]['description']).to eq("0123456789" * 5)
+    expect(false).to eq(true)
   end
 end
