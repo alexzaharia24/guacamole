@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "park spots", :type => :request do
-  fixtures :users
+  fixtures :users, :park_spots
   def user_two_authenticated_header
     token = Knock::AuthToken.new(payload: {sub: users(:two).id}).token
     {

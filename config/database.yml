@@ -23,8 +23,3 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
-
-test:
-  adapter: sqlite3
-  database: ":memory:"
-  timeout: 500
