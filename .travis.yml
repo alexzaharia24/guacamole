@@ -1,4 +1,4 @@
 language: ruby
 script:
-- bundle exec rake build
-- bundle exec rake builddoc
+- bundle exec rake
+- bundle exec rake test
