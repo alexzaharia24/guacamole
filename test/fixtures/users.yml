@@ -4,19 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
+admin:
   id: "1"
-  role: 'admin'
+  role: "admin"
   password_digest: "admin"
   email: 'admin@example.com'
-  username: 'admin'
-# column: value
-#
+
 two:
   id: "2"
   role: 'user2'
   password_digest: "user2"
   email: 'user2@example.com'
-  username: 'user2'
-#
-# column: value
