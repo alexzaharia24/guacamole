@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  user: one
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  price_per_hour: 1.5
+  size: 1
+  description: 01234567890123456789012345678901234567890123456789
+
+two:
+  name: MyString
+  user: two
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  price_per_hour: 1.5
+  size: 1
+  description: 01234567890123456789012345678901234567890123456789

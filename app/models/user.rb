@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :parkspots, dependent: :destroy
+
   validates_length_of       :password, maximum: 72, minimum: 8, allow_nil: true, allow_blank: false
   validates_confirmation_of :password, allow_nil: true, allow_blank: false
 
@@ -15,6 +17,10 @@ class User < ApplicationRecord
 
   def can_modify_user?(user_id)
     role == 'admin' || id.to_s == user_id.to_s
+  end
+
+  def can_modify_park_spot?(park_spot_user_id)
+    role == 'admin' || id.to_s == park_spot_user_id.to_s
   end
 
   def is_admin?
