@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authorize_as_admin, only: [:destroy]
   before_action :authorize,          only: [:update]
 
-  def current
+  def show
     current_user.update!(last_login: Time.now)
     render json: current_user
   end

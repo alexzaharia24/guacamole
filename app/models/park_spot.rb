@@ -1,7 +1,7 @@
 class ParkSpot < ApplicationRecord
   # TODO: add currency
   belongs_to :user
-  validates_uniqueness_of :user_id, :scope => [:address, :latitude, :longitude, :name, :small]
+  validates_uniqueness_of :user_id, :scope => [:address, :latitude, :longitude, :name, :size]
   enum size: [ :small, :medium, :compact, :large, :trucks ]
 
   validates_length_of :name, maximum: 100, minimum: 5, allow_nil: false, allow_blank: false

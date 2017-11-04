@@ -7,37 +7,49 @@ class ParkSpotsController < ApplicationController
   def create
     park_spot = ParkSpot.new(park_spot_params)
     if park_spot.save
-      render json: {status: 200, msg: 'Park spot was created.', park_spot: park_spot}
+      render json: { msg: 'Park spot was created.', park_spot: park_spot },
+          status: 200
     else
-      render json: {status: 204, error: park_spot.errors.full_messages}
+      render json: { error: park_spot.errors.full_messages},
+          status: 400
     end
   end
 
   def show
     park_spot = ParkSpot.find(params[:id])
     if park_spot
-      render json: park_spot
+      render json: park_spot,
+          status: 200
     else
-      render json: {status: 204, error: 'Cound not find park spot.'}
+      render json: {error: 'Cound not find park spot.'},
+          status: 400
     end
   end
 
   def update
     park_spot = ParkSpot.find(params[:id])
     if park_spot.update(park_spot_params)
-      render json: {status: 200, msg: 'Park spot details have been updated.'}
+      render json: { msg: 'Park spot details have been updated.' },
+          status: 200
     else
-      render json: {status: 204, errors: park_spot.errors.full_messages}
+      render json: { errors: park_spot.errors.full_messages },
+          status: 400
     end
   end
 
   def destroy
     park_spot = ParkSpot.find(params[:id])
     if park_spot.destroy
-      render json: {status: 200, msg: 'Park Spot has been deleted.'}
+      render json: { msg: 'Park Spot has been deleted.'},
+          status: 200
     else
-      render json: {status: 204, msg: 'Could not delete user.'}
+      render json: { msg: 'Could not delete user.' },
+          status: 400
     end
+  end
+
+  def park_spots_for_user
+    render json: current_user.park_spots
   end
 
   private
@@ -48,6 +60,9 @@ class ParkSpotsController < ApplicationController
   end
 
   def authorize
-    return_unauthorized unless current_user && ParkSpot.find(params[:id]).user_id.to_s == current_user.id.to_s
+    head :unauthorized unless current_user \
+        && (ParkSpot.find(params[:id]).user_id.to_s == current_user.id.to_s \
+        || current_user.is_admin?)
+
   end
 end
