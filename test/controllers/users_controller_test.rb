@@ -76,6 +76,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "not logged admin cannot delete user" do
     delete "/user/2"
     assert_response :unauthorized
+    assert false
   end
 
   test "logged admin can delete user" do
