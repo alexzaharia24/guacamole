@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action :authenticate_user,  only: [:auth]
 
   def index
-    render json: { service: 'auth-api', status: 200 }
+    render json: { service: 'auth-api-deployed-automatically', status: 200 }
   end
 
   def auth
