@@ -26,16 +26,14 @@ class ParkSpotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "admin should be able to delete park spots" do
-    delete "/park_spot",
-        headers: admin_authenticated_header,
-        params: { id: "2" }
+    delete "/park_spot/2",
+        headers: admin_authenticated_header
     assert_response :success
   end
 
   test "user should be able to delete it's own park spots" do
-    delete '/park_spot',
-      headers: user_two_authenticated_header,
-      params: { id: "2" }
+    delete '/park_spot/2',
+      headers: user_two_authenticated_header
     assert_response :success
   end
 end

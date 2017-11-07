@@ -1,0 +1,13 @@
+monday_1_2:
+  id: 1
+  park_spot_id: 1
+  date: "2017-08-10"
+  start_time: "2017-08-10 13:00"
+  end_time: "2017-08-10 14:00"
+
+monday_2_3:
+  id: 2
+  park_spot_id: 2
+  date: "2017-08-10"
+  start_time: "2017-08-10 14:00"
+  end_time: "2017-08-10 15:00"
